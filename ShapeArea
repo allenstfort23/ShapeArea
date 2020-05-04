@@ -1,0 +1,137 @@
+/************************************************************
+FileName - A Program that ask the use to pick a shape and return the area for the giving shape.
+Switch statements.
+*************************************************************/
+#include <stdio.h>
+// Function for a circle
+int areaSquare(int i) {
+
+      double side = i * i;
+
+      return side;
+      } 
+
+  int areaRectangle( int i, int j) {
+
+      int areaRec = i * j;
+
+      return areaRec;
+    } 
+
+
+  int areaTriangle (int i, int j) {
+
+    double areaTri = i * j;
+
+    return areaTri;
+  } 
+
+  double areaCircle (int i) {
+
+     double radius = i * 3.14;
+
+    return radius;
+  }
+
+int main(void) {
+
+    // Start of Program
+    printf("Start of Program\n");
+
+    // Menu for user to choice input
+    printf("Please Choose a Shape\n");
+    printf("s = square, r = rectangle, t = triangle, c = circle\n");
+  
+    // declare and intilizing variables
+    int i = 0, j = 0;
+    char square;
+
+    // user input
+    while (scanf("%c", &square) != 1) {
+      while (getchar() != '\n');
+      printf("\nYour input was invalid.  ");
+      printf("Please enter a valid choose");
+    }
+
+    // switch case statment 
+
+    switch (square) {
+
+      // case square
+      case 's':
+
+              printf("Square\n");
+
+              double side;
+
+            // user inputs the side of the square
+              printf("Please input the side of the square: \n");
+              scanf("%d", &i);
+              
+            // call Square function
+              printf("Area of the square is :%d", areaSquare(i));
+
+              break;
+
+              // case for rectangle
+      case 'r':
+
+              printf("Rectangle");
+
+           // user inputs the length of the rectangle
+              printf(" Please input the length of the Rectangle\n");
+              scanf("%d", &i);
+
+           // user inputs the width of the rectangle
+              printf("Please input the width of the rectangle\n");
+              scanf("%d", &j);
+
+           // call Rectangle function
+
+              printf("The area of the rectangle is %d :", areaRectangle(i, j));   
+
+            break;
+
+            // case for traingle
+      case 't':
+
+            printf("Triangle\n");
+
+            // user inputs the base of the triangle
+              printf("Please input the base of the triangle\n");
+              scanf("%d", &i);
+
+            // user inputs the height of the triangle 
+              printf("Please input the height of the triangle\n");
+              scanf("%d", &j);
+
+              // call function for the triangle
+              printf("The area of the triangle is %d :", areaTriangle(i, j));
+
+            break;
+
+            // case for circle
+      case 'c':
+
+            printf("Circle\n");
+
+            // user input for the radius of the circle
+            printf("Please input the radius of the circle\n");
+            scanf("%d", &i);
+
+            // call function of the circle
+
+            printf("The radius of the circle is %f :\n", areaCircle(i));
+
+      default:
+
+          printf("Incorrect\n");
+          printf("Please choose again\n");      
+
+
+  }
+
+
+
+  return 0;
+}
